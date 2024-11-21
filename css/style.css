@@ -10,8 +10,7 @@
     font-style: normal;
     scroll-behavior: smooth;
 }
-
-body {
+body{
     background: #fff;
 }
 
@@ -193,6 +192,14 @@ label {
     border-radius: 5px;
     margin-bottom: 1.5rem;
 }
+.form-control.error{
+    outline: unset !important;
+    border: 2px solid #ff0055;
+}
+.form-control:not(:invalid){
+    outline: unset !important;
+    border: 2px solid #00ffa6;
+}
 
 button {
     width: 100%;
@@ -248,7 +255,7 @@ button {
 }
 
 .package {
-    position: relative;
+    position: relative;    
 }
 
 .package .icon {
@@ -265,10 +272,9 @@ button {
 
 }
 
-.package .details {
+.package .details{
     margin-left: 50px;
 }
-
 .details p {
     font-weight: bold;
 }
@@ -359,7 +365,7 @@ footer .logo {
     padding-top: 0 !important;
 }
 
-.border-0 {
+.border-0{
     border: 0;
 }
 
@@ -386,8 +392,7 @@ footer .logo {
         opacity: 1
     }
 }
-
-.dots {
+.dots{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
