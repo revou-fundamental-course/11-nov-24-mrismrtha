@@ -42,6 +42,9 @@ function showSlides(n) {
 const DQ = (s) => {
   return document.querySelector(s);
 };
+const DQA = (s) => {
+  return document.querySelectorAll(s);
+};
 window.addEventListener("load", function () {
   DQ(".btn-nav").addEventListener("click", function (e) {
     e.preventDefault();
@@ -58,18 +61,24 @@ window.addEventListener("load", function () {
       ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>`;
     }
   });
-  DQ("nav a").addEventListener("click", function () {
-    DQ("header").classList.remove("open");
-    DQ(
-      ".btn-nav"
-    ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>`;
+  DQA("nav a").forEach((a) => {
+    a.addEventListener("click", function () {
+      DQ("header").classList.remove("open");
+      DQ(
+        ".btn-nav"
+      ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>`;
+    });
   });
-  DQ("form input").addEventListener("invalid", function () {
-    this.classList.add("error");
+  DQA("form input").forEach(i=>{
+    i.addEventListener("invalid", function () {
+      this.classList.add("error");
+    })
   });
-  DQ("form input").addEventListener("valid", function () {
-    this.classList.remove("error");
-  });
+  DQA("form input").forEach(i=>{
+    i.addEventListener("valid", function () {
+      this.classList.remove("error");
+    });
+  })
   DQ("form").addEventListener("submit", function (e) {
     e.preventDefault();
     alert("Success!");
