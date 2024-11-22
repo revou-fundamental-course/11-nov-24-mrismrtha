@@ -183,19 +183,21 @@ label {
 .form-control {
     padding: .5rem;
     width: 100%;
-    border: 2px solid #8f8f8f;
+    border: 1px solid #8f8f8f;
     border-radius: 5px;
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5rem;
+    outline: unset !important;
+}
+.form-control:focus{
+    border: 1px solid #000000
 }
 
 .form-control.error {
-    outline: unset !important;
-    border: 2px solid #ff0055
+    border: 1px solid #ffce8e
 }
 
 .form-control:not(:invalid) {
-    outline: unset !important;
-    border: 2px solid #00ffa6
+    border: 1px solid #52dfdf
 }
 
 button {
